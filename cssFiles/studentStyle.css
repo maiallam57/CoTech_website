@@ -1,0 +1,1532 @@
+/* =============== Google Fonts =============== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* =============== Globals =============== */
+*{
+    font-family: "Ubunto", sans-serif ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --main-color: #eaeaea;
+  --stroke-color: black;
+    --blue: #0e0620;
+    --white: #fff;
+    --green: #2ccf6d;
+    --Darkblue: #3787FF;
+    --lightblue: #E4F1F8;
+    --yellow: #FF9D42;
+    --red: #DF1525;
+    --black1:#222;
+    --black2: #999;
+    --black: #000;
+    --white: #fff;
+    --dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--light: #EEE;
+    --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #c3c2c8;
+    --light-hover: #f0f0f0;
+    --light-text: #151426;
+    --light-btn: #3787FF;
+    --blue: #E4F1F8;
+    --white: #fff;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-family: consolas;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.studentContainer{
+    position: relative;
+    width: 100%;
+}
+
+/* =============== student Navigation =============== */
+.studentNavigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background:var(--Darkblue);
+    border-left: 20px solid var(--Darkblue) ;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.studentNavigation.studentActive{
+    width: 85px;
+}
+.studentNavigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.studentNavigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.studentNavigation ul li:hover,
+.studentNavigation ul li.studentHovered{
+    background-color: var(--white);
+}
+
+.studentNavigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.studentNavigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.studentNavigation ul li:hover a,
+.studentNavigation ul li.studentHovered a{
+    color: var(--Darkblue);
+}
+
+.studentNavigation ul li a .studentIcon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+.studentNavigation ul li a .studentIcon ion-icon{
+    font-size: 1.75rem;
+}
+
+.studentNavigation ul li a .studentTitle{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* ----------------- curve outside ----------------- */
+.studentNavigation ul li:hover a::before,
+.studentNavigation ul li.studentHovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.studentNavigation ul li:hover a::after,
+.studentNavigation ul li.studentHovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* =============== student Main =============== */
+.studentMain{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.studentMain.studentActive{
+    width: calc(100% - 85px);
+    left: 85px;
+}
+.studentTopBar{
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.studentToggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.studentSearch{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.studentSearch label{
+    position: relative;
+    width: 100%;
+}
+
+.studentSearch label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.studentSearch label ion-icon{
+    position: absolute;
+    top: 0.5px;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.studentUser{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 25px;
+}
+.studentUser img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =============== student Cards =============== */
+.studentCardBox{
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+.studentBoxTitle{
+    position: relative;
+    padding: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.studentCardBox .studentCard{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    margin-right: 30px;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.studentCardBox .studentCard .studentCardName{
+    position: relative;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--Darkblue);
+}
+
+.studentCardBox .studentCard .studentCardInfo{
+    color: var(--black2);
+    font-size: 1.5rem;
+    margin-top: 7px;
+}
+
+.studentCardBox .studentCard .studentIconBx{
+    font-size: 3rem;
+    color: var(--black2)
+}
+.studentCardBox .studentCard:hover{
+    background: var(--Darkblue);
+}
+
+.studentCardBox .studentCard:hover .studentCardName,
+.studentCardBox .studentCard:hover .studentCardInfo,
+.studentCardBox .studentCard:hover .studentIconBx{
+    color: var(--white);
+}
+
+/* =============== Course Details=============== */
+.studentCourseDetails{
+    position: relative;
+    width: 1600px;
+    padding: 20px;
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+}
+.studentCourseDetails .studentRecentCourse{
+    position: relative;
+    display: grid;
+    min-height: 300px;
+    background: var(--lightblue);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+.studentCourseDetails .studentCardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.studentCardHeader h2{
+    font-weight: 600;
+    color: var(--Darkblue);
+}
+.studentCardHeader .studentButton{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--Darkblue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 7px;
+    width: 100px;
+    text-align: center;
+}
+.studentCourseDetails table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.studentCourseDetails table thead td{
+    font-weight: 600;
+}
+.studentCourseDetails .studentRecentCourse table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.studentCourseDetails .studentRecentCourse table tr:last-child{
+    border-bottom: none;
+}
+.studentCourseDetails .studentRecentCourse table tr td{
+    padding: 10px;
+    margin: 0;
+}
+
+.studentWelcome{
+    padding: 30px;  
+    color: #3787ff; 
+    font-size: 35px;
+    margin-left: 30px;
+}
+.studentWelcomeBar{
+    position: relative;
+    background: var(--lightblue);
+    padding: 30px;
+    margin: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+.studentWelcomeBarTitle{
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.studentWelcomeBarInfo{
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 21px;
+    margin-top: 5px;
+    color: var(--black1);
+}
+.StudentWelcomeIcon{
+    color: var(--Darkblue);
+    font-size: 4.5rem;
+    margin-right: 20px;
+}
+
+/* ========================= table ======================= */
+.StudentTable {
+    position: relative;
+    align-content: center;
+    margin: 75px;
+    margin-top: 50px;
+    width: 80vw;
+    height: 70vh;
+    background-color: var(--lightblue);
+
+    /* backdrop-filter: blur(7px); */
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: .8rem;
+
+    overflow: hidden;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: var(--lightblue);
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .studentInput-group {
+    width: 35%;
+    height: 80%;
+    background-color: var(--white);
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.table__header .studentInput-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.table__header .studentInput-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.table__header .studentInput-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.StudentTable__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: var(--white);
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+.StudentTable__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.StudentTable__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: var(--Darkblue);
+    visibility: hidden;
+}
+
+.StudentTable__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+
+    vertical-align: middle;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--Darkblue);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.533);
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: var(--lightblue) !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
+
+.StudentStatus {
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.StudentStatus.delivered {
+    background-color: #86e49d;
+    color: var(--black);
+}
+
+.StudentStatus.NotDelivered {
+    background-color: #d893a3;
+    color: var(--black);
+}
+
+.StudentStatus.pending {
+    background-color: var(--yellow);
+}
+
+.StudentStatus.Late {
+    background-color: #6fcaea;
+}
+
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+thead th span.studentIcon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+thead th:hover span.studentIcon-arrow{
+    border: 1.4px solid var(--lightblue);
+}
+
+thead th:hover {
+    color: var(--lightblue);
+}
+
+thead th.active span.studentIcon-arrow{
+    background-color: var(--lightblue);
+    color: var(--black2);
+}
+
+thead th.asc span.studentIcon-arrow{
+    transform: rotate(180deg);
+}
+
+thead th.active,tbody td.active {
+    color: var(--black1);
+}
+
+.studentExport__file {
+    position: relative;
+}
+
+.studentExport__file .studentExport__file-btn {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: var(--Darkblue) url(images/export.png) center / 80% no-repeat;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.studentExport__file .studentExport__file-btn:hover { 
+    background-color: var(--black2);
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.studentExport__file input {
+    display: none;
+}
+
+.studentExport__file .studentExport__file-options {
+    position: absolute;
+    right: 0;
+    
+    width: 12rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(.8);
+    transform-origin: top right;
+    
+    box-shadow: 0 .2rem .5rem #0004;
+    
+    transition: .2s;
+}
+
+.studentExport__file input:checked + .studentExport__file-options {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 100;
+}
+
+.studentExport__file .studentExport__file-options label{
+    display: block;
+    width: 100%;
+    padding: .6rem 0;
+    background-color: var(--white);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: .2s ease-in-out;
+}
+
+.studentExport__file .studentExport__file-options label:first-of-type{
+    padding: 1rem 0;
+    background-color: var(--Darkblue) !important;
+}
+
+.studentExport__file .studentExport__file-options label:hover{
+    transform: scale(1.05);
+    background-color: var(--lightblue);
+    cursor: pointer;
+}
+
+.studentExport__file .studentExport__file-options img{
+    width: 2rem;
+    height: auto;
+}
+
+
+/* =================== to do list ==================== */
+.toDoList{
+    width: 900px;
+    min-height: 500px;
+    margin-top: 30px;
+    margin-left: -5px;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+	flex-direction: column;
+	color: #FFF;
+	background-color: var(--lightblue);
+	box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 .2rem .5rem #0004;    
+    position: relative;
+
+}
+.toDoListTitle{
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 35px;
+    color: var(--Darkblue);
+    margin-top: 25px;
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+#new-task-form {
+	display: flex;;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: var(--white);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--black);
+	font-size: 1.25rem;
+}
+
+#new-task-input::placeholder {
+	color: var(--black2);
+    padding: 5px;
+}
+
+#new-task-submit {
+	background-color: var(--Darkblue);
+    color: var(--white);
+    width: 100px;
+    height: 50px;
+    margin-top: 2px;
+    border-radius: 10px;
+	font-size: 1.25rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+#new-task-submit:hover {
+    background-color: var(--white);
+    color: var(--Darkblue);
+}
+
+#new-task-submit:active {
+    background-color: var(--white);
+    color: var(--Darkblue);
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: var(--black1);
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--Darkblue);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	color: var(--white);
+	font-size: 1.125rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: var(--lightblue);
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover {
+    color: var(--black1);
+}
+
+.task .actions button:active {
+    color: var(--black1);
+}
+
+.task .actions .edit {
+    color: var(--white);
+}
+
+.task .actions .delete {
+	color: var(--lightblue);
+}
+
+/* ==================== timline =================== */
+.timelineArea{
+    width: 500px;
+    min-height: 500px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+	flex-direction: column;
+	color: #FFF;
+	background-color: var(--lightblue);
+	box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 .2rem .5rem #0004;
+    cursor: pointer;
+    position: relative;
+
+}
+.timeline{
+    width: 600px;
+    margin-left: 40px;
+    margin-top: 0;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+}
+.timelineH1{
+    width: 600px;
+    padding: 10px;
+    margin-left: 50px;
+    color: var(--Darkblue);
+
+}
+.timeline-object {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+.timeline-object.notComplete::after {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    width: 4px;
+    height: 100px;
+    background-color: #C5C5C5;
+    
+    left: 23px;
+    top: 50px;
+    transform: translateX(-50%);
+  }
+
+.timeline-object.complete::after {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    width: 4px;
+    height: 100px;
+    background-color: var(--Darkblue);
+    
+    left: 23px;
+    top: 50px;
+    transform: translateX(-50%);
+  }
+  .timeline-status {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    background-color: var(--Darkblue);
+  }
+
+  .timeline-object:not(.complete) .timeline-status {
+    background: #ffffff;
+    border: 4px solid #C5C5C5;
+  }
+
+  .timeline-content {
+    margin-left: 15px;
+  }
+  
+  .timeline-content h3 {
+    color: var(--white);
+    background: var(--Darkblue);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content span {
+    color: var(--black);
+    font-size: .9em;
+    font-weight: bold;
+  }
+  .timeline-object:not(.complete) .timeline-content h3 {
+    color: #8A8A8A;
+    background: #E1E1DF;
+  }
+.ToDoList-TimelineArea{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,2fr));
+    grid-column-gap: 520px;
+}
+
+
+/*======================================*/
+
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* ====================== calender ===================*/
+
+.calendarTitle{
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 0;
+    padding: 0;
+    color: var(--Darkblue);
+    margin-top: 5px;
+}
+.calendarContainer{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+	flex-direction: column;
+	background-color: var(--lightblue);
+	box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 .2rem .5rem #0004;
+    cursor: pointer;
+    position: relative;
+}
+
+  .calendar {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+	flex-direction: column;
+	background-color: var(--lightblue);
+	box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 .2rem .5rem #0004;
+    cursor: pointer;
+    position: relative;
+
+    height: 670px;
+    width: max-content;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px 50px 0px 50px;
+    align-items: center;
+  }
+  .calendar {
+    box-shadow: 0 .2rem .5rem #0004;
+  }
+  .calendar-header {
+    margin-top: 20px;
+    background: #3787FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .calendar-body {
+    pad: 10px;
+  }
+  .calendar-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    cursor: pointer;
+    color:rgb(104, 104, 104);
+  }
+  .calendar-week-days div:hover {
+  color:black;
+  transform: scale(1.2);
+  transition: all .2s ease-in-out;
+  }
+  .calendar-week-days div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+    height: 50px;
+  }
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+  }
+  .calendar-days div {
+    width: 37px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+  }
+  .month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .month-picker:hover {
+    background-color: var(--color-hover);
+  }
+  .month-picker:hover {
+    color: var(--color-txt);
+  }
+  .year-picker {
+    display: flex;
+    align-items: center;
+  }
+  .year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  .year-change:hover {
+    background-color: var(--light-btn);
+    transition:all .2s ease-in-out ;
+    transform: scale(1.12);
+  }
+  .year-change:hover pre {
+    color: var(--bg-body);
+  }
+  .calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  #year:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.2 ease-in-out;
+  }
+  .calendar-days div span {
+    position: absolute;
+  }
+   .calendar-days div:hover {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    background-color: var(--light-btn);
+    border-radius: 20%;
+  }
+  .calendar-days div.current-date {
+    color: var(--dark-text);
+    background-color: var(--light-btn);
+    border-radius: 20%;
+  }
+  .month-list {
+    position: relative;
+    left: 0;
+    top: -20px;
+    background-color: var(--light-main);
+    color: var(--black1);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    border-radius: 10px;
+  }
+  .month-list > div {
+    display: grid;
+    place-content: center;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .month-list > div > div {
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .month-list > div > div:hover {
+    background-color:var(--Darkblue);
+    color: var(--dark-text);
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  .month-list.show {
+    visibility: visible;
+    pointer-events: visible;
+    transition: 0.6s ease-in-out;
+    animation: to-left .71s forwards;
+  }
+  .month-list.hideonce{
+    visibility: hidden;
+  }
+  .month-list.hide {
+    animation: to-right 1s forwards;
+    visibility: none;
+    pointer-events: none;
+  }
+  .date-time-formate {
+    width: max-content;
+    height: max-content;
+    font-family: Dubai Light, Century Gothic;
+    position: relative;
+    display: inline;
+    top: 140px;
+    justify-content: center;
+  }
+  .day-text-formate {
+    font-family: Microsoft JhengHei UI;
+    font-size: 1.4rem;
+    padding-right: 5%;
+    border-right: 3px solid #3787FF;
+    position: absolute;
+    left: -1rem;
+    text-align: center;
+    margin-left: 35px;
+  }
+  .date-time-value {
+    display: block;
+    height: max-content;
+    width: max-content;
+    position: relative;
+    left: 40%;
+    top: -18px;
+    text-align: center;
+    margin-left: 40px;
+  }
+  .time-formate {
+    font-size: 1.5rem;
+  }
+  .time-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  .day-text-formate.hidetime {
+    animation: hidetime 1.5s forwards;
+  }
+  .date-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  .day-text-formate.showtime{
+    animation: showtime 1s forwards;
+  }
+  .time-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  .date-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  @keyframes to-top {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+  @keyframes to-left {
+    0% {
+      transform: translatex(230%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+  @keyframes to-right {
+    10% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(-150%);
+      opacity: 1;
+    }
+  }
+  @keyframes showtime {
+    0% {
+      transform: translatex(250%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes hidetime {
+    0% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(-370%);
+      opacity: 1;
+    }
+  }
+  @media (max-width:375px) {
+    .month-list>div{
+  
+      margin: 5px 0px;
+    }
+  }
+        
+
+
+
+
+
+/* error 404*/
+/* error 500 */
+
+.erorBody{
+  width: 100%;;
+  height: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: var(--white);
+  position: relative;
+}
+.erorBody .errorContent{
+ width: 1400px; 
+ text-align: center;
+}
+.erorBody .errorHeader img{
+  position: relative;
+  /* animation: back 2s linear infinite; */
+  width: 400px;
+}
+@keyframes back {
+  0%{
+    transform: translateY(10px);
+  }
+  50%{
+    transform: translateY(-10px);  
+  }
+  100%{
+    transform: translateY(10px);  
+  }
+  }
+
+.erorBody h2{
+  position: relative;
+  color: var(--black);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background-color: var(--white);
+}
+.erorBody h2::before{
+  position: absolute;
+  content: attr(data-text);
+  top:0;
+  left: 0;
+  right: 0;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+  -webkit-text-fill-color: transparent;
+}
+
+.erorBody p{
+  font-size: 0.8rem;
+  color: #000;
+  text-align: center;
+  padding: 0;
+}
+.erorBody .errorButtons{
+  margin: 0px 0px;
+  display: inline-flex;
+}
+.erorBody .errorButtons a{
+  margin: 0px;
+  font-size: 0.7rem;
+    position: relative;
+    padding: 0px 5px;
+    margin-top: 15px;
+    background: var(--Darkblue);
+    text-decoration: none;
+    color: var(--white);
+    border: var(--Darkblue);
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.erorBody .errorButtons a:hover{
+  background: var(--lightblue);
+  color: var(--black);
+  border: var(--Darkblue);
+}
+
+.errorGears{
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+}
+.errorGears ion-icon{
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  animation: Gears 2s linear infinite;
+}
+
+@keyframes Gears {
+0%{
+  transform: rotate(-180deg);
+  
+}
+50%{
+  transform: rotate(0deg);
+} 
+100%{
+  transform: rotate(90deg);
+} 
+}
+
+.errorGears ion-icon:nth-child(1){
+  animation-delay: 8s;
+  top: 260px;
+  left: 700px;
+}
+.errorGears ion-icon:nth-child(2){
+  animation-delay: 5s;
+  top: 129px;
+  width: 35px;
+  height: 35px;
+  left: 621px;
+  color: var(--black2);
+}
+.errorGears ion-icon:nth-child(3){
+  animation-delay: 4s;
+  top: 240px;
+  left: 460px;
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+/* coming soon */
+
+.comingSoonMain{
+  margin: 0;
+  padding: 0;
+  font-size: 'poppins', sans-serif;
+  box-sizing: border-box;
+}
+.comingSoonContainer{
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url("/imgs/background.png"); */
+  background-position: center;
+  background-size: cover;
+  background-color: #7AB7E3;
+  position: relative;
+}
+.comingSoonLogo{
+  width: 80px;
+  padding: 20px 0;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.soonContent{
+  margin-left: 110px;
+  top: 22%;
+  position: absolute;
+  /* transform: translateY(-50%); */
+  color: #fff;
+
+}
+.soonContent p{
+  font-size: 35px;
+  margin-left: 5px;
+
+}
+
+.soonContent h1{
+  font-size: 100px;
+  font-weight: 500px;
+}
+.soonContent h1 span{
+  color: #ff3753;
+}
+.soonContent button{
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.soonContent button img{
+  width: 30px;
+  margin-left: 10px;
+}
+.SoonLanuch-time{
+  display: flex;
+}
+.SoonLanuch-time div{
+  flex-basis: 100px;
+  font-size: 40px;
+  margin: auto; 
+  margin-top: 25px;
+}
+.SoonLanuch-time div{
+  font-size: 20px;
+}
+.soonRocket{
+  width: 400px;
+  position: absolute;
+  right: 5%;
+  bottom:20%;
+  animation: back 4s linear infinite;
+}
+/* @keyframes rocket {
+  0%{
+    bottom: 0;
+    opacity: 0;
+  }
+  100%{
+    bottom: 105%;
+    opacity: 1;
+  }
+} */
+
+
+/* report page */
+
+.reportBar{
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  position: relative;
+  align-content: center;
+  margin-top: 50px;
+  width: 95%;
+}
+
+.reportBarBody{
+  width: 95%;
+  background-color: var(--lightblue);
+  margin: .8rem auto;
+  border-radius: .6rem;
+
+  overflow: auto;
+  overflow: overlay;
+}
+
+
+/* filter bar */
+.reportContainer{
+  width: 2100px;
+  margin-left: 30px;
+  margin-top: 80px;
+}

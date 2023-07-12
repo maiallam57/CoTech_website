@@ -1,0 +1,21 @@
+01. create JASON object for questions
+02. start creating HTML Markup
+03. Add Dummy data
+04. create the styling
+05. fetch number of questions from jason object
+06. show questions count + questions category
+07. show the number of bullets depend on questions count
+08. set the number for the right and wrong answers
+09. create countdown timer
+10. fetch the questions from JASON object
+11. show first question
+12. check answer and hide questions then show next one 
+13. if the time end mark the question as wrong and show next question
+14. if questions finished show the result
+
+
+Ideas
+
+- Many JASON objects and choose language
+- Add many questions and choose only 10 randamly
+- randomize Answers ( Shuffle Fuction )

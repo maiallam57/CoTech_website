@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Report Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ================ StyleSheet ================ -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+
+    <link rel="stylesheet" href="assets/css/feather.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="cssFiles/style.css">
+    <link rel="stylesheet" href="cssFiles/studentStyle.css">
+</head>
+
+<body>
+    <!-- ================ Navigation ================ -->
+    <div class="studentContainer">
+        <div class="studentNavigation">
+            <ul>
+                <li>
+                    <a href="studentHome.html">
+                        <span class="studentIcon">
+                            <ion-icon name="logo-apple"></ion-icon>
+                        </span>
+                        <span class="studentTitle">CoTech</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="studentHomePage.html">
+                        <span class="studentIcon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="userDB/instructor.html">
+                        <span class="studentIcon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Programs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="userDB/timeline.html">
+                        <span class="studentIcon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Schedular</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Achievement.html">
+                        <span class="studentIcon">
+                            <ion-icon name="trophy-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Achievement</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="quiz.html">
+                        <span class="studentIcon">
+                            <ion-icon name="megaphone-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Quizes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="userDB/task.html">
+                        <span class="studentIcon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Assignments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="userDB/materials.html">
+                        <span class="studentIcon">
+                            <ion-icon name="library-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="userDB/settings.html">
+                        <span class="studentIcon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="studentIcon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="studentTitle">Sign Out</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- ================ Main ================ -->
+
+        <div class="studentMain">
+            <div class="studentTopBar">
+                <div class="studentToggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="studentSearch">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="studentUser">
+                    <a href="userDB/profile.html">
+                        <img src="imgs\mai.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- ==============================================================================-->
+
+            <div class="reportContainer">
+
+
+
+                <div class="card report-card">
+                    <div class="card-body pb-0">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="app-listing">
+                                    <li>
+                                        <div class="multipleSelection">
+                                            <div class="selectBox">
+                                                <p class="mb-0"><i class="fas fa-user-plus me-1 select-icon"></i> Select User</p>
+                                                <span class="down-icon"><i class="fas fa-chevron-down"></i></span>
+                                            </div>
+                                            <div id="checkBoxes">
+                                                <form action="#">
+                                                    <p class="checkbox-title">Customer Search</p>
+                                                    <div class="form-custom">
+                                                        <input type="text" class="form-control bg-grey"
+                                                            placeholder="Enter Customer Name">
+                                                    </div>
+                                                    <div class="selectBox-cont">
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Brian Johnson
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Russell Copeland
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Greg Lynch
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> John Blair
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Barbara Moore
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Hendry Evan
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="username">
+                                                            <span class="checkmark"></span> Richard Miles
+                                                        </label>
+                                                    </div>
+                                                    <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                                    <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="multipleSelection">
+                                            <div class="selectBox">
+                                                <p class="mb-0"><i class="fas fa-calendar me-1 select-icon"></i> Select
+                                                    Date</p>
+                                                <span class="down-icon"><i class="fas fa-chevron-down"></i></span>
+                                            </div>
+                                            <div id="checkBoxes">
+                                                <form action="#">
+                                                    <p class="checkbox-title">Date Filter</p>
+                                                    <div class="selectBox-cont selectBox-cont-one h-auto">
+                                                        <div class="date-picker">
+                                                            <div class="form-custom cal-icon">
+                                                                <input class="form-control datetimepicker" type="text"
+                                                                    placeholder="Form">
+                                                            </div>
+                                                        </div>
+                                                        <div class="date-picker pe-0">
+                                                            <div class="form-custom cal-icon">
+                                                                <input class="form-control datetimepicker" type="text"
+                                                                    placeholder="To">
+                                                            </div>
+                                                        </div>
+                                                        <div class="date-list">
+                                                            <ul>
+                                                                <li><a href="#" class="btn date-btn">Today</a></li>
+                                                                <li><a href="#" class="btn date-btn">Yesterday</a></li>
+                                                                <li><a href="#" class="btn date-btn">Last 7 days</a>
+                                                                </li>
+                                                                <li><a href="#" class="btn date-btn">This month</a></li>
+                                                                <li><a href="#" class="btn date-btn">Last month</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="multipleSelection">
+                                            <div class="selectBox">
+                                                <p class="mb-0"><i class="fas fa-book-open me-1 select-icon"></i> Select
+                                                    Status</p>
+                                                <span class="down-icon"><i class="fas fa-chevron-down"></i></span>
+                                            </div>
+                                            <div id="checkBoxes">
+                                                <form action="#">
+                                                    <p class="checkbox-title">By Status</p>
+                                                    <div class="selectBox-cont">
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name" checked>
+                                                            <span class="checkmark"></span> All
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name">
+                                                            <span class="checkmark"></span> Paid
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name">
+                                                            <span class="checkmark"></span> Overdue
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name">
+                                                            <span class="checkmark"></span> Draft
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name">
+                                                            <span class="checkmark"></span> Recurring
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="name">
+                                                            <span class="checkmark"></span> Cancelled
+                                                        </label>
+                                                    </div>
+                                                    <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                                    <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="multipleSelection">
+                                            <div class="selectBox">
+                                                <p class="mb-0"><i class="fas fa-bookmark me-1 select-icon"></i> By
+                                                    Task</p>
+                                                <span class="down-icon"><i class="fas fa-chevron-down"></i></span>
+                                            </div>
+                                            <div id="checkBoxes">
+                                                <form action="#">
+                                                    <p class="checkbox-title">Task</p>
+                                                    <div class="form-custom">
+                                                        <input type="text" class="form-control bg-grey"
+                                                            placeholder="Enter Category Name">
+                                                    </div>
+                                                    <div class="selectBox-cont">
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Advertising
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Food
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Marketing
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Repairs
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Software
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Stationary
+                                                        </label>
+                                                        <label class="custom_check w-100">
+                                                            <input type="checkbox" name="category">
+                                                            <span class="checkmark"></span> Travel
+                                                        </label>
+                                                    </div>
+                                                    <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                                    <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="report-btn">
+                                            <a href="#" class="btn">
+                                                <img src="assets/img/icons/invoices-icon5.png" alt="" class="me-2">
+                                                Generate report
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card invoices-tabs-card border-0">
+                    <div class="card-body card-body pt-0 pb-0">
+                        <div class="invoices-main-tabs">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 col-md-8">
+                                    <div class="invoices-tabs">
+                                        <ul>
+                                            <li><a href="reportHome.html">All Tasks</a></li>
+                                            <li><a href="reportPrograms.html">Programs</a></li>
+                                            <li><a href="reportQuizes.html">Quizes</a></li>
+                                            <li><a href="reportAchievements.html" class="active">Students Achievements</a></li>
+                                            
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="invoices-settings-btn">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                                <div class="StudentTable">
+                                    <section class="table__header">
+                                        <h2 class="studentWelcomeBarTitle"> </h2>
+                                        <div class="studentInput-group">
+                                            <input type="search" placeholder="Search Data...">
+                                            <img src="images/search.png" alt="">
+                                        </div>
+                                        <div class="studentExport__file">
+                                            <label for="export-file" class="studentExport__file-btn"
+                                                title="Export File"></label>
+                                            <input type="checkbox" id="export-file">
+                                            <div class="studentExport__file-options">
+                                                <label>Export As &nbsp; &#10140;</label>
+                                                <label for="export-file" id="toPDF">PDF
+                                                    <img src="images/pdf.png" alt=""></label>
+                                                <label for="export-file" id="toJSON">JSON
+                                                    <img src="images/json.png" alt=""></label>
+                                                <label for="export-file" id="toCSV">CSV
+                                                    <img src="images/csv.png" alt=""></label>
+                                                <label for="export-file" id="toEXCEL">EXCEL
+                                                    <img src="images/excel.png" alt=""></label>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="StudentTable__body">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th> Student Name <span class="studentIcon-arrow">&UpArrow;</span></th>
+                                                    <th> Task Name <span class="studentIcon-arrow">&UpArrow;</span></th>
+                                                    <th> Mark <span class="studentIcon-arrow">&UpArrow;</span></th>
+                                                    <th> Task Date <span class="studentIcon-arrow">&UpArrow;</span></th>
+                                                    <th> Status <span class="studentIcon-arrow">&UpArrow;</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> Mai </td>
+                                                    <td> Scratch 1</td>
+                                                    <td> 8 </td>
+                                                    <td> 17 Dec, 2022 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    delivered">Delivered</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Asmaa </td>
+                                                    <td> Rov Control </td>
+                                                    <td> 6 </td>
+                                                    <td> 27 Aug, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    NotDelivered">Not Delivered</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Hazem</td>
+                                                    <td> Smart Home System</td>
+                                                    <td> 9 </td>
+                                                    <td> 14 Mar, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus Late">Late</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Toka</td>
+                                                    <td> Line Following Car </td>
+                                                    <td> 10</td>
+                                                    <td> 25 May, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    delivered">Delivered</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Esmael</td>
+                                                    <td> Blink a Led </td>
+                                                    <td> 10 </td>
+                                                    <td> 23 Apr, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    pending">Pending</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Mai</td>
+                                                    <td> Student Page </td>
+                                                    <td> 9 </td>
+                                                    <td> 23 Apr, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    NotDelivered">Not Delivered</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Hazem</td>
+                                                    <td> Temperature Sensor</td>
+                                                    <td> 10 </td>
+                                                    <td> 20 May, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    delivered">Delivered</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Asmaa</td>
+                                                    <td> Motion Sensor</td>
+                                                    <td> 9 </td>
+                                                    <td> 30 Feb, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    pending">Pending</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Toka</td>
+                                                    <td> Blink </td>
+                                                    <td> 11 </td>
+                                                    <td> 22 Dec, 2023 </td>
+                                                    <td>
+                                                        <p class="StudentStatus
+                                                    NotDelivered">Not Delivered</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </section>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+    <!-- ================= scripts ================= -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/feather.min.js"></script>
+
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="assets/js/script.js"></script>
+
+
+
+
+    <script src="jsFiles/studentJs.js"></script>
+
+
+    <!-- ================= ionicon ================= -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
